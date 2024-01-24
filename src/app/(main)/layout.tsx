@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 export default function MainLayout({
     children,
@@ -9,9 +10,10 @@ export default function MainLayout({
     return (
         <div>
         <Navbar />
-        <div className="mx-auto max-w-[1024px] px-unit-2 py-unit-2xl sm:px-unit-6">
+        <div className="">
           {children}
         </div>
+        <Footer />
       </div>
     )
 }
