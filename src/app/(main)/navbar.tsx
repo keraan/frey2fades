@@ -11,7 +11,7 @@ export default function Navbar() {
     }
     function ShortNavbarItem({ path, text }: ShortNavbarItemProps) {
         return (
-            <NavbarItem className="hover:bg-slate-50" isActive={pathname === path}>
+            <NavbarItem className="" isActive={pathname === path}>
                 <Link href={path} className="text-black" >{text}</Link>
             </NavbarItem>
         )
@@ -53,11 +53,12 @@ export default function Navbar() {
             </NavbarBrand>
             <NavbarContent className="gap-5 transition-all">
                 <ShortNavbarItem path="/home" text="Home"/>
-                <Divider orientation="vertical" className="h-8"/>
+                {/* <Divider orientation="vertical" className="h-8"/> */}
                 <ShortNavbarItem path="/portfolio" text="Portfolio"/>
                 <ShortNavbarItem path="/contact" text="Contact"/>
-                <NavbarItem className="hover:bg-slate-50 " isActive={pathname === '/book'}>
-                <Link href='/book' className="text-black " >Book Now</Link>
+                <Divider orientation="vertical" className="h-8"/>
+                <NavbarItem isActive={pathname === '/booking'}>
+                <Link href='/booking' className="text-black " >Book Now</Link>
             </NavbarItem>
             </NavbarContent>
         </NextNavbar>
