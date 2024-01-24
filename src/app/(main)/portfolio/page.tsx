@@ -1,4 +1,5 @@
 "use client"
+import { toastError } from "@/app/features/error";
 import { useEffect, useState } from "react";
 
 export default function Portfolio() {
@@ -9,12 +10,10 @@ export default function Portfolio() {
             try {
                 const res = await fetch('http://localhost:1338/api/images?populate=*');
                 const data = await res.json();
-                console.log(data);
                 const fetchedUrls = data.data.map((image: any) => image.attributes.image.data.attributes.url);
-                console.log(fetchedUrls);
                 setUrls(fetchedUrls);
             } catch (err) {
-                console.error(err);
+                toastError(err)
             }
         };
 
