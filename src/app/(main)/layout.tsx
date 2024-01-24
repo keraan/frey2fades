@@ -8,9 +8,9 @@ export default function MainLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div>
+      <div className="flex flex-col h-screen justify-between">
         <Navbar />
-        <div className="">
+        <div className="mb-auto flex justify-center">
           {children}
         </div>
         <Footer />
