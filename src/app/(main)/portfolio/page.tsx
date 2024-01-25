@@ -11,9 +11,7 @@ export default function Portfolio() {
   useEffect(() => {
     const getImages = async () => {
       try {
-        const res = await fetch(
-          `${STRAPI_BASE_URL}/api/images?populate=*`,
-        );
+        const res = await fetch(`${STRAPI_BASE_URL}/api/images?populate=*`);
         const data = await res.json();
         const fetchedUrls = data.data;
         console.log(fetchedUrls);
