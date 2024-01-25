@@ -65,18 +65,6 @@ export default function Contact() {
                     </div>
                 </CardBody>
             </Card>
-            {/* <div>
-                <h1>Contact me here</h1>
-                <Link href="https://www.instagram.com/patfreyz/" isExternal>
-
-                </Link>
-            </div>
-            <div>
-                <h1>See my work here</h1>
-                <Link href="https://www.tiktok.com/@patfreyz?lang=en" isExternal>
-
-                </Link>
-            </div> */}
         </div>
     )
 }
