@@ -1,6 +1,6 @@
 "use client";
 import { toastError } from "@/app/features/error";
-import {Image} from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -29,6 +29,7 @@ export default function Portfolio() {
         {imageObject.map((data, key) => (
           <Link
             href={{ pathname: "/portfolio/single", query: { id: data.id } }}
+            key={key}
           >
             <Image
               className="h-96 hover:opacity-0.5"
