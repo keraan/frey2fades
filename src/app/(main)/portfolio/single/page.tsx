@@ -10,7 +10,7 @@ export default function Single({
     id: number;
   };
 }) {
-  const [otherImages, setOtherImages] = useState([]);
+  const [otherImages, setOtherImages] = useState<any[]>([]);
   const [isFetched, setIsFetched] = useState(false);
   useEffect(() => {
     const getImageData = async () => {

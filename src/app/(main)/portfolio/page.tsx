@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Portfolio() {
-  const [imageObject, setImageObject] = useState([]);
+  const [imageObject, setImageObject] = useState<any[]>([]);
 
   useEffect(() => {
     const getImages = async () => {
@@ -29,7 +29,7 @@ export default function Portfolio() {
         {imageObject &&
           imageObject.map((data, key) => (
             <Link
-              href={{ pathname: "/portfolio/single", query: { id: data?.id } }}
+              href={{ pathname: "/portfolio/single", query: { id: data.id } }}
               key={key}
             >
               <Image
