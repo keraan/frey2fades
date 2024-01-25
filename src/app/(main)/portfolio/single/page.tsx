@@ -3,13 +3,13 @@ import { toastError } from "@/app/features/error";
 import { STRAPI_BASE_URL } from "@/app/strapiSDK";
 import { Image } from "@nextui-org/react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-export default function Single() {
+function Search() {
   const [otherImages, setOtherImages] = useState<any[]>([]);
   const [isFetched, setIsFetched] = useState(false);
-
   const searchParams = useSearchParams();
+
   useEffect(() => {
     const getImageData = async () => {
       try {
@@ -41,5 +41,13 @@ export default function Single() {
           ))}
       </div>
     </div>
+  );
+}
+
+export default function Single() {
+  return (
+    <Suspense>
+      <Search />
+    </Suspense>
   );
 }
