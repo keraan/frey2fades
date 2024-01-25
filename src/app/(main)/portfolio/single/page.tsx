@@ -14,7 +14,7 @@ export default function Single() {
     const getImageData = async () => {
       try {
         const res = await fetch(
-          `${STRAPI_BASE_URL}/api/images/${searchParams.get('id')}?populate=*`,
+          `${STRAPI_BASE_URL}/api/images/${searchParams.get("id")}?populate=*`,
         );
         const data = await res.json();
         console.log(data);
