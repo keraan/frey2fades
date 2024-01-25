@@ -26,20 +26,21 @@ export default function Portfolio() {
   return (
     <div className="text-center w-[1024px] p-3">
       <div className="grid grid-cols-3 gap-1">
-        {imageObject && imageObject.map((data, key) => (
-          <Link
-            href={{ pathname: "/portfolio/single", query: { id: data?.id } }}
-            key={key}
-          >
-            <Image
-              className="h-96 hover:opacity-0.5"
+        {imageObject &&
+          imageObject.map((data, key) => (
+            <Link
+              href={{ pathname: "/portfolio/single", query: { id: data?.id } }}
               key={key}
-              src={`http://localhost:1338${data.attributes.thumbnail.data.attributes.url}`}
-              alt="Gallery"
-              isZoomed
-            />
-          </Link>
-        ))}
+            >
+              <Image
+                className="h-96 hover:opacity-0.5"
+                key={key}
+                src={`http://localhost:1338${data.attributes.thumbnail.data.attributes.url}`}
+                alt="Gallery"
+                isZoomed
+              />
+            </Link>
+          ))}
       </div>
     </div>
   );
