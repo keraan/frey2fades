@@ -1,11 +1,16 @@
 "use client"
-import { InlineWidget } from "react-calendly";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/home')
+  })
   return (
     <div className="App">
-      {/* <InlineWidget url="https://calendly.com/khuynh8" /> */}
-      
+
     </div>
   );
 }
