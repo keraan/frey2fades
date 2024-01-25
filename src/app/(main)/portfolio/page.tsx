@@ -1,5 +1,6 @@
 "use client";
 import { toastError } from "@/app/features/error";
+import { STRAPI_BASE_URL } from "@/app/strapiSDK";
 import { Image } from "@nextui-org/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -11,7 +12,7 @@ export default function Portfolio() {
     const getImages = async () => {
       try {
         const res = await fetch(
-          "http://frey2fades-backend-production.up.railway.app/api/images?populate=*",
+          `${STRAPI_BASE_URL}/api/images?populate=*`,
         );
         const data = await res.json();
         const fetchedUrls = data.data;
@@ -37,7 +38,7 @@ export default function Portfolio() {
               <Image
                 className="h-96 hover:opacity-0.5"
                 key={key}
-                src={`http://frey2fades-backend-production.up.railway.app${data.attributes.thumbnail.data.attributes.url}`}
+                src={`${STRAPI_BASE_URL}${data.attributes.thumbnail.data.attributes.url}`}
                 alt="Gallery"
                 isZoomed
               />

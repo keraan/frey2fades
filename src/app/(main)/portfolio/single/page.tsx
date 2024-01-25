@@ -1,5 +1,6 @@
 "use client";
 import { toastError } from "@/app/features/error";
+import { STRAPI_BASE_URL } from "@/app/strapiSDK";
 import { Image } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
@@ -16,7 +17,7 @@ export default function Single({
     const getImageData = async () => {
       try {
         const res = await fetch(
-          `http://frey2fades-backend-production.up.railway.app/api/images/${searchParams.id}?populate=*`,
+          `${STRAPI_BASE_URL}/api/images/${searchParams.id}?populate=*`,
         );
         const data = await res.json();
         console.log(data);
@@ -37,7 +38,7 @@ export default function Single({
             <Image
               className="h-96 hover:opacity-0.5"
               key={1}
-              src={`http://frey2fades-backend-production.up.railway.app${data.attributes.url}`}
+              src={`${STRAPI_BASE_URL}${data.attributes.url}`}
               alt="Gallery"
             />
           ))}
