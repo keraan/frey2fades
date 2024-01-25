@@ -26,9 +26,9 @@ export default function Portfolio() {
   return (
     <div className="text-center w-[1024px] p-3">
       <div className="grid grid-cols-3 gap-1">
-        {imageObject.map((data, key) => (
+        {imageObject && imageObject.map((data, key) => (
           <Link
-            href={{ pathname: "/portfolio/single", query: { id: data.id } }}
+            href={{ pathname: "/portfolio/single", query: { id: data?.id } }}
             key={key}
           >
             <Image
