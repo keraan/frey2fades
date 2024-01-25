@@ -10,7 +10,9 @@ export default function Portfolio() {
   useEffect(() => {
     const getImages = async () => {
       try {
-        const res = await fetch("http://localhost:1338/api/images?populate=*");
+        const res = await fetch(
+          "http://frey2fades-backend-production.up.railway.app/api/images?populate=*",
+        );
         const data = await res.json();
         const fetchedUrls = data.data;
         console.log(fetchedUrls);
@@ -35,7 +37,7 @@ export default function Portfolio() {
               <Image
                 className="h-96 hover:opacity-0.5"
                 key={key}
-                src={`http://localhost:1338${data.attributes.thumbnail.data.attributes.url}`}
+                src={`http://frey2fades-backend-production.up.railway.app${data.attributes.thumbnail.data.attributes.url}`}
                 alt="Gallery"
                 isZoomed
               />

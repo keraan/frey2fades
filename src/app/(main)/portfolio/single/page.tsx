@@ -16,7 +16,7 @@ export default function Single({
     const getImageData = async () => {
       try {
         const res = await fetch(
-          `http://localhost:1338/api/images/${searchParams.id}?populate=*`,
+          `http://frey2fades-backend-production.up.railway.app/api/images/${searchParams.id}?populate=*`,
         );
         const data = await res.json();
         console.log(data);
@@ -37,7 +37,7 @@ export default function Single({
             <Image
               className="h-96 hover:opacity-0.5"
               key={1}
-              src={`http://localhost:1338${data.attributes.url}`}
+              src={`http://frey2fades-backend-production.up.railway.app${data.attributes.url}`}
               alt="Gallery"
             />
           ))}
