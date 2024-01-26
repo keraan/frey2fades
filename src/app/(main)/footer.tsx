@@ -4,8 +4,8 @@ import { Link } from "@nextui-org/react";
 
 export default function Footer() {
   return (
-    <div className="bg-slate-300 flex flex-col items-center p-5">
-      <div>
+    <div className="bg-gray-300 flex flex-col items-center p-5">
+      {/* <div>
         <Link href="https://www.instagram.com/patfreyz/" isExternal>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ export default function Footer() {
           </svg>
         </Link>
       </div>
-      <div />
+      <div /> */}
     </div>
   );
 }

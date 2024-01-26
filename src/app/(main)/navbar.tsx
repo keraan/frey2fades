@@ -1,16 +1,23 @@
 "use client";
 import {
+  Button,
   Divider,
   Link,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
   Navbar as NextNavbar,
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   type ShortNavbarItemProps = {
     path: string;
@@ -19,7 +26,7 @@ export default function Navbar() {
   function ShortNavbarItem({ path, text }: ShortNavbarItemProps) {
     return (
       <NavbarItem className="" isActive={pathname === path}>
-        <Link href={path} className="text-black opacity-70 h-full">
+        <Link href={path} className="text-black opacity-70 h-full w-full">
           {text}
         </Link>
       </NavbarItem>
@@ -27,7 +34,11 @@ export default function Navbar() {
   }
 
   return (
-    <NextNavbar
+    <NextNavbar 
+      isBordered
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="w-full shadow-md"
       classNames={{
         item: [
           "flex",
@@ -55,24 +66,40 @@ export default function Navbar() {
           "transition-all duration-1000 ease-in-out",
         ],
       }}
-      className="shadow-md"
     >
-      <NavbarBrand>
-        <p>Frey 2 Fades</p>
-      </NavbarBrand>
-      <NavbarContent className="gap-5 transition-all">
-        <div className="flex-grow" />
+      <NavbarContent className="" justify="start">
+        <NavbarBrand>
+          <p>Frey2Fades</p>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <div className="flex-grow" />
+
+      {/* Hamburger button */}
+      <NavbarContent className="lg:hidden" justify="end">
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+      </NavbarContent>
+
+      {/* Full size navbar */}
+      <NavbarContent className="hidden lg:flex">
         <ShortNavbarItem path="/home" text="Home" />
-        {/* <Divider orientation="vertical" className="h-8"/> */}
         <ShortNavbarItem path="/portfolio" text="Portfolio" />
         <ShortNavbarItem path="/contact" text="Contact" />
         <Divider orientation="vertical" className="h-8" />
-        <NavbarItem isActive={pathname === "/booking"}>
-          <Link href="/booking" className="text-black ">
-            Book Now
-          </Link>
-        </NavbarItem>
+        <Link href="/booking" className="text-black h-full">
+          <Button radius="sm">Book Now</Button>
+        </Link>
       </NavbarContent>
+
+      {/* Hamburger menu */}
+      <NavbarMenu>
+        <ShortNavbarItem path="/home" text="Home" />
+        <ShortNavbarItem path="/portfolio" text="Portfolio" />
+        <ShortNavbarItem path="/contact" text="Contact" />
+        <Link href="/booking" className="text-black w-full">
+          <Button radius="sm" className="w-full">Book Now</Button>
+        </Link>
+      </NavbarMenu>
     </NextNavbar>
   );
 }
