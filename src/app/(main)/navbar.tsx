@@ -19,7 +19,7 @@ export default function Navbar() {
   function ShortNavbarItem({ path, text }: ShortNavbarItemProps) {
     return (
       <NavbarItem className="" isActive={pathname === path}>
-        <Link href={path} className="text-black">
+        <Link href={path} className="text-black opacity-70 h-full">
           {text}
         </Link>
       </NavbarItem>
@@ -61,6 +61,7 @@ export default function Navbar() {
         <p>Frey 2 Fades</p>
       </NavbarBrand>
       <NavbarContent className="gap-5 transition-all">
+        <div className="flex-grow" />
         <ShortNavbarItem path="/home" text="Home" />
         {/* <Divider orientation="vertical" className="h-8"/> */}
         <ShortNavbarItem path="/portfolio" text="Portfolio" />
