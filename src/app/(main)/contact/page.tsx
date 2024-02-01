@@ -37,7 +37,11 @@ export default function Contact() {
             </div>
             <div className="flex justify-center gap-4 pt-4">
               <Card className="w-full" isHoverable>
-                <a href="https://www.instagram.com/patfreyz/" target="_blank">
+                <a
+                  href="https://www.instagram.com/patfreyz/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <CardBody className="p-3">
                     <h3 className="self-center text-md">Instagram</h3>
                   </CardBody>
@@ -49,6 +53,7 @@ export default function Contact() {
                 <a
                   href="https://www.tiktok.com/@patfreyz?lang=en"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <CardBody className="p-3">
                     <h3 className="self-center text-md">Tiktok</h3>
