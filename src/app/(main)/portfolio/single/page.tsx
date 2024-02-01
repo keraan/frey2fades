@@ -27,13 +27,13 @@ function Search() {
     getImageData();
   }, [searchParams]);
   return (
-    <div className="text-center w-[1024px] p-3">
-      <div className="grid grid-cols-3 gap-1">
+    <div className="flex w-[1024px] p-3 justify-center">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         {isFetched &&
           otherImages &&
           otherImages.map((data) => (
             <Image
-              className="h-96 hover:opacity-0.5"
+              className="h-96 max-w-80 hover:opacity-0.5"
               key={1}
               src={`${STRAPI_BASE_URL}${data.attributes.url}`}
               alt="Gallery"
