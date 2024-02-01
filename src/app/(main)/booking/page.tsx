@@ -3,12 +3,11 @@ import { InlineWidget } from "react-calendly";
 
 export default function Booking() {
   return (
-    <div>
+    <div className="w-2/3">
       <InlineWidget
         url="https://calendly.com/khuynh8"
         styles={{
-          height: "1000px",
-          width: "1000px",
+          height: "100vh",
         }}
       />
     </div>
