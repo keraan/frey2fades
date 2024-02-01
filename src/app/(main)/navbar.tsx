@@ -7,13 +7,11 @@ import {
   NavbarContent,
   NavbarItem,
   NavbarMenu,
-  NavbarMenuItem,
   NavbarMenuToggle,
   Navbar as NextNavbar,
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -34,7 +32,7 @@ export default function Navbar() {
   }
 
   return (
-    <NextNavbar 
+    <NextNavbar
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -77,7 +75,9 @@ export default function Navbar() {
 
       {/* Hamburger button */}
       <NavbarContent className="lg:hidden" justify="end">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        />
       </NavbarContent>
 
       {/* Full size navbar */}
@@ -97,7 +97,9 @@ export default function Navbar() {
         <ShortNavbarItem path="/portfolio" text="Portfolio" />
         <ShortNavbarItem path="/contact" text="Contact" />
         <Link href="/booking" className="text-black w-full">
-          <Button radius="sm" className="w-full">Book Now</Button>
+          <Button radius="sm" className="w-full">
+            Book Now
+          </Button>
         </Link>
       </NavbarMenu>
     </NextNavbar>

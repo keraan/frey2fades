@@ -1,7 +1,5 @@
 "use client";
 
-import { Link } from "@nextui-org/react";
-
 export default function Footer() {
   return (
     <div className="bg-gray-300 flex flex-col items-center p-5">
