@@ -67,7 +67,9 @@ export default function Navbar() {
     >
       <NavbarContent className="" justify="start">
         <NavbarBrand>
-          <p>Frey2Fades</p>
+          <Link href="/home">
+            <p>Frey2Fades</p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
