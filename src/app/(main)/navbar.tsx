@@ -92,7 +92,7 @@ export default function Navbar() {
       </NavbarContent>
 
       {/* Hamburger menu */}
-      <NavbarMenu className="pb-10">
+      <NavbarMenu className="pb-24 sm:pb-10">
         <ShortNavbarItem path="/home" text="Home" />
         <ShortNavbarItem path="/portfolio" text="Portfolio" />
         <ShortNavbarItem path="/contact" text="Contact" />
