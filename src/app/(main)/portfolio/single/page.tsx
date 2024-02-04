@@ -1,22 +1,20 @@
 "use client";
 import { toastError } from "@/app/features/error";
-import {Image} from "@nextui-org/react";
-import { useEffect, useState } from "react";
+import { STRAPI_BASE_URL } from "@/app/strapiSDK";
+import { Image } from "@nextui-org/react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
 
-export default function Single({
-  searchParams,
-}: {
-  searchParams: {
-    id: number;
-  };
-}) {
-  const [otherImages, setOtherImages] = useState([]);
+function Search() {
+  const [otherImages, setOtherImages] = useState<any[]>([]);
   const [isFetched, setIsFetched] = useState(false);
+  const searchParams = useSearchParams();
+
   useEffect(() => {
     const getImageData = async () => {
       try {
         const res = await fetch(
-          `http://localhost:1338/api/images/${searchParams.id}?populate=*`,
+          `${STRAPI_BASE_URL}/api/images/${searchParams.get("id")}?populate=*`,
         );
         const data = await res.json();
         console.log(data);
@@ -29,19 +27,27 @@ export default function Single({
     getImageData();
   }, [searchParams]);
   return (
-    <div className="text-center w-[1024px] p-3">
-      <div className="grid grid-cols-3 gap-1">
+    <div className="flex w-[1024px] p-3 justify-center">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
         {isFetched &&
           otherImages &&
           otherImages.map((data) => (
             <Image
-              className="h-96 hover:opacity-0.5"
+              className="h-96 max-w-80 hover:opacity-0.5"
               key={1}
-              src={`http://localhost:1338${data.attributes.url}`}
+              src={`${STRAPI_BASE_URL}${data.attributes.url}`}
               alt="Gallery"
             />
           ))}
       </div>
     </div>
+  );
+}
+
+export default function Single() {
+  return (
+    <Suspense>
+      <Search />
+    </Suspense>
   );
 }

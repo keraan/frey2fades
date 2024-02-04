@@ -1,10 +1,10 @@
-import {Image} from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 
 export default function Home() {
   return (
     <div className="w-full">
       <div className="flex justify-center">
-        <Image src="/frey2fadeslogo.png" alt="logo"/>
+        <Image src="/frey2fadeslogo.png" alt="logo" />
       </div>
       <div className="flex flex-row flex-wrap items-center justify-center bg-gray-50 w-full gap-36">
         <div className="">
