@@ -6,7 +6,7 @@ export default function Home() {
       <div className="flex justify-center">
         <Image src="/frey2fadeslogo.png" alt="logo" />
       </div>
-      <div className="flex flex-row flex-wrap items-center justify-center bg-gray-50 w-full gap-36">
+      <div className="flex flex-row flex-wrap items-center justify-center bg-white w-full gap-36">
         <div className="">
           <h1 className="font-mono text-3xl text-center">Some of my works..</h1>
         </div>
