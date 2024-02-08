@@ -1,6 +1,6 @@
 "use client";
 import { toastError } from "@/app/features/error";
-import {Image} from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
 export default function Single({
