@@ -10,7 +10,7 @@ export default function MainLayout({
   return (
     <div className="flex flex-col h-screen justify-between">
       <Navbar />
-      <div className="mb-auto flex justify-center">{children}</div>
+      <div className="flex justify-center">{children}</div>
       <Footer />
     </div>
   );

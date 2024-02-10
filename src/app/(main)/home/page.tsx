@@ -1,49 +1,33 @@
-import { Image } from "@nextui-org/react";
+"use client";
+import { Link, Button } from "@nextui-org/react";
+import StickyCursor from "@/app/components/StickyCursor";
+import { useRef } from "react";
+import BookingButton from "@/app/components/BookingButton";
 
 export default function Home() {
+  const stickyElement = useRef(null);
   return (
     <div className="w-full">
-      <div className="flex justify-center">
-        <Image src="/frey2fadeslogo.png" alt="logo" />
-      </div>
-      <div className="flex flex-row flex-wrap items-center justify-center bg-gray-50 w-full gap-36">
-        <div className="">
-          <h1 className="font-mono text-3xl text-center">Some of my works..</h1>
+      <StickyCursor stickyElement={stickyElement} />
+      <div className="flex flex-col justify-center items-center m-1 h-full">
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-black opacity-70">
+          Frey2Fades
+        </h1>
+        <div className="flex flex-row my-5">
+          <p className="text-black opacity-70">
+            A Blacktown based self taught barber
+          </p>
         </div>
-        <div className="h-96 flex items-center">
-          {/* <div className="w-1/2 font-mono text-3xl">
-                        Portfolio
-                    </div> */}
-          <div className="space-y-2">
-            <div className="flex flex-row space-x-2">
-              <div className="">
-                <Image src="/karina1.png" alt="Example portfolio photo" />
-              </div>
-              <div className="">
-                <Image src="/karinals.png" alt="Example portfolio photo" />
-              </div>
-            </div>
-            <div className="flex flex-row space-x-2">
-              <div className="">
-                <Image src="/wonyoungls.png" alt="Example portfolio photo" />
-              </div>
-              <div className="">
-                <Image src="/wonyoung1.png" alt="Example portfolio photo" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Link href="/booking" className="text-black mb-5">
+          <Button
+            radius="full"
+            className="bg-gradient-to-tr from-black-500 to-white-500 shadow-lg"
+            color="primary"
+          >
+            <BookingButton ref={stickyElement} />
+          </Button>
+        </Link>
       </div>
-      {/* <div className="flex flex-row flex-wrap items-center justify-center bg-gray-50 w-full gap-36">
-                <div>
-                    hello
-                </div>
-                <div>
-                    <h1 className="font-mono text-3xl text-center">
-                        Where we are
-                    </h1>
-                </div>
-            </div> */}
     </div>
   );
 }

@@ -84,7 +84,7 @@ export default function Navbar() {
       <NavbarContent className="hidden lg:flex">
         <ShortNavbarItem path="/home" text="Home" />
         <ShortNavbarItem path="/portfolio" text="Portfolio" />
-        <ShortNavbarItem path="/contact" text="Contact" />
+        {/* <ShortNavbarItem path="/contact" text="Contact" /> */}
         <Divider orientation="vertical" className="h-8" />
         <Link href="/booking" className="text-black h-full">
           <Button radius="sm">Book Now</Button>
@@ -95,7 +95,7 @@ export default function Navbar() {
       <NavbarMenu className="pb-10">
         <ShortNavbarItem path="/home" text="Home" />
         <ShortNavbarItem path="/portfolio" text="Portfolio" />
-        <ShortNavbarItem path="/contact" text="Contact" />
+        {/* <ShortNavbarItem path="/contact" text="Contact" /> */}
         <Link href="/booking" className="text-black w-full">
           <Button radius="sm" className="w-full">
             Book Now
